@@ -1,16 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"path"
 )
 
 func main() {
 	_, exec := path.Split(os.Args[0])
-	fmt.Println("called", exec[:4])
 	switch exec[:4] {
-	case "list", "serv":
+	default:
 		listener()
 	case "send":
 		sender()
